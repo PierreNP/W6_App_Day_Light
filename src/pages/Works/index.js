@@ -55,6 +55,9 @@ const Works = () => {
           <Route path="/works/:client-study-case">
             <Book />
           </Route>
+          <Route path="/works">
+            <h3>Veuillez sélectionner un projet !</h3>
+          </Route>
         </Switch>
       </Router>
     </div>
