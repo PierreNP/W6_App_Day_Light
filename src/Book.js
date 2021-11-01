@@ -13,7 +13,17 @@ function Book() {
     setCurrentCaseStudy(foundStudy);
   }, [client]);
 
-  return <div>{currentCaseStudy && currentCaseStudy.markdown}</div>;
+  return (
+    <>
+      {currentCaseStudy === undefined && <p>Veuillez </p>}
+      {currentCaseStudy && (
+        <div>
+          <div>{currentCaseStudy.client}</div>
+          <div>{currentCaseStudy.markdown}</div>
+        </div>
+      )}
+    </>
+  );
 }
 
 export default Book;
