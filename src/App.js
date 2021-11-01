@@ -1,9 +1,9 @@
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import Navbar from "./Navbar";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Navbar from "./components/Navbar";
 import Home from "./pages/Home/index";
 import About from "./pages/About/index";
 import Works from "./pages/Works/index";
-import { useState, useEffect } from "react";
 import ModeContext from "./ModeContext";
 
 function App() {
@@ -23,12 +23,7 @@ function App() {
   };
 
   return (
-    <ModeContext.Provider
-      value={{
-        mode: mode,
-        toggleMode: toggleMode,
-      }}
-    >
+    <ModeContext.Provider value={{ mode: mode, toggleMode: toggleMode }}>
       <div className={mode}>
         <Router>
           <header>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import caseStudiesList from "./CaseStudiesList";
+import caseStudiesList from "../CaseStudiesList";
 import ReactMarkdown from "react-markdown";
 
 function CaseStudy() {

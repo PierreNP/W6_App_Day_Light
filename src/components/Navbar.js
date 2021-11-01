@@ -4,10 +4,12 @@ import Button from "./Button";
 
 export default function Navbar() {
   return (
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/about">L'agence</Link>
-      <Link to="/works">Projets</Link>
+    <nav className="navbar">
+      <div>
+        <Link to="/">Home</Link>
+        <Link to="/about">L'agence</Link>
+        <Link to="/works">Projets</Link>
+      </div>
       <Button />
     </nav>
   );
