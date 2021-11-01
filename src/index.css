@@ -18,10 +18,6 @@ code {
     monospace;
 }
 
-body {
-  /* background-color: turquoise; */
-}
-
 #root {
   /* min-height: 100vh; */
 }
@@ -149,5 +145,8 @@ a:hover {
   border: orange 1px solid;
   padding: 1rem;
   border-radius: 1rem;
+}
 
+.home,.about {
+  width: 50%;
 }

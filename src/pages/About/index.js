@@ -9,7 +9,7 @@ Laissez votre projet entre des mains dignes de confiance, ayant accompagné "PLA
 
 const About = () => {
   return (
-    <div>
+    <div className="about">
       <h1>About</h1>
       <ReactMarkdown>{markdown}</ReactMarkdown>
     </div>
