@@ -16,13 +16,20 @@ const Works = () => {
       <Router>
         <nav>
           {caseStudiesList.map((caseStudy) => (
-            <Link to={"/Works/" + caseStudy.client}>
+            <Link
+              to={
+                "/works/" +
+                caseStudy.client[0].toLowerCase() +
+                caseStudy.client.slice(1) +
+                "-study-case"
+              }
+            >
               <ReactMarkdown>{caseStudy.client}</ReactMarkdown>
             </Link>
           ))}
         </nav>
         <Switch>
-          <Route path="/Works/:client">
+          <Route path="/works/:client-study-case">
             <Book />
           </Route>
         </Switch>

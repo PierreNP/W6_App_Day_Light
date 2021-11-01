@@ -9,7 +9,7 @@ function CaseStudy() {
 
   useEffect(() => {
     const foundStudy = caseStudiesList.find(
-      (caseStudy) => caseStudy.client === client
+      (caseStudy) => caseStudy.client.toLowerCase() === client
     );
     setCurrentCaseStudy(foundStudy);
   }, [client]);
