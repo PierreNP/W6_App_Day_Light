@@ -1,24 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import Navbar from "./Navbar";
+import Home from "./pages/Home/index";
+import About from "./pages/About/index";
+import Works from "./pages/Works/index";
+import { useState, useEffect } from "react";
+import ModeContext from "./ModeContext";
 
 function App() {
+  const [mode, setMode] = useState(localStorage.getItem("mode") || "Day");
+
+  useEffect(() => {
+    localStorage.setItem("mode", mode);
+  }, [mode]);
+
+  const toggleMode = () => {
+    if (mode === "Day") {
+      setMode("Night");
+    } else {
+      setMode("Day");
+    }
+    console.log("toggle !");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ModeContext.Provider
+      value={{
+        mode: mode,
+        toggleMode: toggleMode,
+      }}
+    >
+      <div className={mode}>
+        <Router>
+          <header>
+            <Navbar />
+          </header>
+          <Switch>
+            <Route path="/" exact>
+              <Home />
+            </Route>
+            <Route path="/works">
+              <Works />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+    </ModeContext.Provider>
   );
 }
 
