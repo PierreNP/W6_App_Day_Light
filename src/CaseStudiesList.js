@@ -1,6 +1,6 @@
 const caseStudiesList = [
   {
-    client: "Platon",
+    client: `Platon`,
     markdown: `## Le challenge
 
 Platon a décidé de se lancer à l'époque malgré une crise économique difficile.  

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import caseStudiesList from "./CaseStudiesList";
+import ReactMarkdown from "react-markdown";
 
-function Book() {
+function CaseStudy() {
   const { client } = useParams();
-  const [currentCaseStudy, setCurrentCaseStudy] = useState(undefined);
+  const [currentCaseStudy, setCurrentCaseStudy] = useState(null);
 
   useEffect(() => {
     const foundStudy = caseStudiesList.find(
@@ -15,15 +16,14 @@ function Book() {
 
   return (
     <>
-      {currentCaseStudy === undefined && <p>Veuillez </p>}
       {currentCaseStudy && (
         <div>
-          <div>{currentCaseStudy.client}</div>
-          <div>{currentCaseStudy.markdown}</div>
+          <ReactMarkdown>{"# " + currentCaseStudy.client}</ReactMarkdown>
+          <ReactMarkdown>{currentCaseStudy.markdown}</ReactMarkdown>
         </div>
       )}
     </>
   );
 }
 
-export default Book;
+export default CaseStudy;

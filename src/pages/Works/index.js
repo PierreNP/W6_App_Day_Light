@@ -1,7 +1,7 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import Book from "../../Book";
+import Book from "../../CaseStudy";
 import caseStudiesList from "../../CaseStudiesList";
 
 const Works = () => {
@@ -16,7 +16,7 @@ const Works = () => {
       <Router>
         <nav>
           {caseStudiesList.map((caseStudy) => (
-            <Link to={caseStudy.client}>
+            <Link to={"/Works/" + caseStudy.client}>
               <ReactMarkdown>{caseStudy.client}</ReactMarkdown>
             </Link>
           ))}
