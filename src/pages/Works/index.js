@@ -32,6 +32,12 @@ const Works = () => {
         <nav className={`sub-navigation ${display}`}>
           {caseStudiesList.map((caseStudy) => (
             <div className="case-study">
+              <ReactMarkdown className="bold-link">
+                {caseStudy.client}
+              </ReactMarkdown>
+              {display === "card" && (
+                <p>{caseStudy.markdown.split("\n")[0].slice(3)}</p>
+              )}
               <Link
                 to={
                   "/works/" +
@@ -40,13 +46,8 @@ const Works = () => {
                   "-study-case"
                 }
               >
-                <ReactMarkdown className="bold-link">
-                  {caseStudy.client}
-                </ReactMarkdown>
+                Voir plus
               </Link>
-              {display === "card" && (
-                <p>{caseStudy.markdown.split("\n")[0].slice(3)}</p>
-              )}
             </div>
           ))}
         </nav>

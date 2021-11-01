@@ -17,7 +17,7 @@ function CaseStudy() {
   return (
     <>
       {currentCaseStudy && (
-        <div>
+        <div class="case-study-component">
           <ReactMarkdown>{"# " + currentCaseStudy.client}</ReactMarkdown>
           <ReactMarkdown>{currentCaseStudy.markdown}</ReactMarkdown>
         </div>

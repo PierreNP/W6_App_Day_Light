@@ -122,7 +122,14 @@ a:hover {
   border-radius: 1rem;
   padding: 1rem;
   min-width: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+/* .case-study p {
+  margin-bottom: 0;
+} */
 
 .fas {
   margin-left: 1rem;
@@ -135,4 +142,12 @@ a:hover {
 
 .bold-link {
   font-weight: bold;
+}
+
+.case-study-component {
+  margin-top: 2rem;
+  border: orange 1px solid;
+  padding: 1rem;
+  border-radius: 1rem;
+
 }
