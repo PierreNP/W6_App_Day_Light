@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import Book from "../../components/CaseStudy";
+import CaseStudy from "../../components/CaseStudy";
 import caseStudiesList from "../../CaseStudiesList";
 import DisplayContext from "../../DisplayContext";
 import Button2 from "../../components/Button2";
@@ -53,7 +53,7 @@ const Works = () => {
         </nav>
         <Switch>
           <Route path="/works/:client-study-case">
-            <Book />
+            <CaseStudy />
           </Route>
           <Route path="/works">
             <h3>Veuillez sélectionner un projet !</h3>
