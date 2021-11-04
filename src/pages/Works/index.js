@@ -9,7 +9,7 @@ import Button2 from "../../components/Button2";
 const Works = () => {
   const markdown = `### Au fil des années, nous avons pu accompagner les meilleurs.
 
-  Découvrez pas à pas comment nous avons été présent pour lancer vos marques préférées.`;
+  Découvrez pas à pas comment nous avons été présents pour lancer vos marques préférées.`;
 
   const [display, setDisplay] = useState("list");
 
